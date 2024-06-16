@@ -37,7 +37,7 @@ b.	Set up the Flask application to run with Gunicorn as the WSGI server.
 •	Once wsgi file is ready then we are serving our application using below command.
     $ gunicorn --bind 0.0.0.0:5000 wsgi:app
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/4d02338e-aba9-4add-92eb-93f85e167987)
+    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/b28581e0-3ccd-46e8-a552-ebced7eed9c2)
 
 •	Now our application is running but when we stop or cancel that time application will be stop.
 
