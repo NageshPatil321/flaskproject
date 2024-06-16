@@ -1,6 +1,7 @@
 # Project Name : Flask Project
 # Created By : Mr. Nagesh Patil
-===================================================================================================================================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 1) Steps to set up and deploy the application.
 
@@ -37,7 +38,7 @@ b.	Set up the Flask application to run with Gunicorn as the WSGI server.
 •	Once wsgi file is ready then we are serving our application using below command.
     $ gunicorn --bind 0.0.0.0:5000 wsgi:app
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/b28581e0-3ccd-46e8-a552-ebced7eed9c2)
+    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/b28581e0-3ccd-46e8-a552-ebced7eed9c2.png)
 
 •	Now our application is running but when we stop or cancel that time application will be stop.
 
@@ -289,5 +290,5 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
 
     Solution : Assign Elastic IP address to EC2 instance and update that public IP inside the config files.
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
