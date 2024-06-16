@@ -37,16 +37,16 @@ b.	Set up the Flask application to run with Gunicorn as the WSGI server.
 •	Once wsgi file is ready then we are serving our application using below command.
     $ gunicorn --bind 0.0.0.0:5000 wsgi:app
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/4d02338e-aba9-4add-92eb-93f85e167987)
+    ![image-1](screenshot/Image-1.png)
 
 •	Now our application is running but when we stop or cancel that time application will be stop.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/ee853f74-0445-430e-ae12-1004d1bb5337)
+    ![image-2](screenshot/Image-2.png)
 
 •	To overcome this issue, we need to create a gunicorn systemd service and this service will be managing the application like start, stop, restart etc.
     $ vim /etc/systemd/system/gunicorn.service
  
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/c4ac17de-01a0-4876-a361-36f06d22f5b8)
+    ![image-3](screenshot/Image-3.png)
 
 c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server.
 
@@ -56,7 +56,7 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
     $ vi application.com # create file for our application configuration details 
     $ ln -s /etc/nginx/sites-available/application.com /etc/nginx/sites-enabled # enable config file 
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/3d53b899-3bb3-42be-a76d-0032e3a3433e)
+    ![image-4](screenshot/Image-4.png)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
