@@ -38,16 +38,17 @@ b.	Set up the Flask application to run with Gunicorn as the WSGI server.
 •	Once wsgi file is ready then we are serving our application using below command.
     $ gunicorn --bind 0.0.0.0:5000 wsgi:app
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/66003451-db4b-4f68-8965-a220873816cf)
+
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/6beb489b-69e2-4a0e-81cc-9811b0a5e94f)
 
 •	Now our application is running but when we stop or cancel that time application will be stop.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/ee853f74-0445-430e-ae12-1004d1bb5337)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/ee853f74-0445-430e-ae12-1004d1bb5337)
 
 •	To overcome this issue, we need to create a gunicorn systemd service and this service will be managing the application like start, stop, restart etc.
     $ vim /etc/systemd/system/gunicorn.service
  
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/c4ac17de-01a0-4876-a361-36f06d22f5b8)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/c4ac17de-01a0-4876-a361-36f06d22f5b8)
 
 c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server.
 
@@ -57,7 +58,7 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
     $ vi application.com # create file for our application configuration details 
     $ ln -s /etc/nginx/sites-available/application.com /etc/nginx/sites-enabled # enable config file 
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/3d53b899-3bb3-42be-a76d-0032e3a3433e)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/3d53b899-3bb3-42be-a76d-0032e3a3433e)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,15 +67,15 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
 
 •	Add the web application code to the repository.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/09be0aee-73b2-4db9-b559-f1e2698d3e37)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/09be0aee-73b2-4db9-b559-f1e2698d3e37)
 
 •	Create a Git repository on GitHub (or another Git hosting service).
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/91386a5f-90df-4c4c-ae63-f225161e3454)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/91386a5f-90df-4c4c-ae63-f225161e3454)
 
 •	Create a CI/CD pipeline using GitHub Actions (or any other CI/CD tool like Jenkins, GitLab CI/CD). The Jeniks setup and pipeline should:
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/3b7eba05-8bd1-449a-a133-78409ceb5a10)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/3b7eba05-8bd1-449a-a133-78409ceb5a10)
 
         Pipeline Script:
         pipeline {
@@ -153,21 +154,21 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
 
 •	Jenkins Build Status
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/1e18263f-a13c-4c0b-83b2-15ee02a9c9c7)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/1e18263f-a13c-4c0b-83b2-15ee02a9c9c7)
 
 •	Application running status
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/49d8bc27-daad-46b8-86ab-29f1cb1d2f43)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/49d8bc27-daad-46b8-86ab-29f1cb1d2f43)
 
 •	Deploy the updated application to the EC2 instance
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/49de2bb9-04e2-4fed-857c-9aa292379154)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/49de2bb9-04e2-4fed-857c-9aa292379154)
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/477de2d9-5844-4f35-abb7-7bcd8c627645)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/477de2d9-5844-4f35-abb7-7bcd8c627645)
 
 •	Update the S3 bucket with any static files from the application
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/48ee8d2a-d302-4f0c-9ff2-c9f7ab2f69d6)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/48ee8d2a-d302-4f0c-9ff2-c9f7ab2f69d6)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -176,49 +177,49 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
 
 •	Set up IAM roles and policies to ensure the EC2 instance can interact with the S3 bucket and Attach created role to the EC2 instance
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/868f27f4-c866-4c77-86c3-e7ab712a26c4)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/868f27f4-c866-4c77-86c3-e7ab712a26c4)
 
     poilicy attach:
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/d4c300de-fff8-4c35-bbc8-485a526eb679)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/d4c300de-fff8-4c35-bbc8-485a526eb679)
 
 •	Ensure proper security groups are configured for the EC2 instance to allow web traffic on port 80.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/de7f26c9-7f23-49e6-a327-2b7b3159c287)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/de7f26c9-7f23-49e6-a327-2b7b3159c287)
 
 •	Set up a schedule to start and stop the EC2 instance at specified times using AWS Lambda and CloudWatch Events.
 
     a) Create Policy for EC2 Instance to Start and Stop the Servers.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/ff29d20b-b625-481f-99d0-b23570f61205)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/ff29d20b-b625-481f-99d0-b23570f61205)
 
     b) Create Role for Lambda Function to start and Stop and attach this above policy.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/3093df45-bb53-488f-87e3-cb29eab7ddfe)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/3093df45-bb53-488f-87e3-cb29eab7ddfe)
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/8e6304db-46b2-432d-acca-96b1449a9031)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/8e6304db-46b2-432d-acca-96b1449a9031)
 
     c) Create Lambda Function for Start and Stop the Server.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/2b3e5c71-690b-45a1-a52d-fedb275c7cc9)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/2b3e5c71-690b-45a1-a52d-fedb275c7cc9)
 
     d) AWSPolicyFlaskStartServer-Lambda Python Code.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/216fd522-dff0-4b5e-b072-ad43bf3d6f54)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/216fd522-dff0-4b5e-b072-ad43bf3d6f54)
 
     e) AWSPolicyFlaskStopServer-Lambda Python Code.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/1112a366-023a-477c-85fc-e44d48ea5f41)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/1112a366-023a-477c-85fc-e44d48ea5f41)
 
     f) CloudWatch Setup.
 
     Start:
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/06478d6c-a4c6-4897-a734-c31529dab519)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/06478d6c-a4c6-4897-a734-c31529dab519)
 
     Stop:
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/e84fc0fa-6736-4292-bc30-ff52258d8daf)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/e84fc0fa-6736-4292-bc30-ff52258d8daf)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -227,11 +228,11 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
 
 •	Create an S3 bucket named devops-assignment-[your_name].
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/986e1aa5-12cd-443f-80c2-aec32bd04317)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/986e1aa5-12cd-443f-80c2-aec32bd04317)
 
 •   Upload a file (e.g., a text file with a brief introduction about yourself) to the S3 bucket.
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/67be87d1-d4d1-4be0-afe9-ff64256f062f)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/67be87d1-d4d1-4be0-afe9-ff64256f062f)
 
 •	Set appropriate permissions to ensure the file is publicly accessible.
 
@@ -241,7 +242,7 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
 
     Screenshot:
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/2c2dd49b-75b9-4324-9081-3d63ce7ebc8f)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/2c2dd49b-75b9-4324-9081-3d63ce7ebc8f)
 
     2)	introduction.txt file publicly accessible   
 
@@ -249,7 +250,7 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
  
     Screenshot:
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/9b60d9f5-8f9f-4f22-b10b-17a81a3cf0bd)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/9b60d9f5-8f9f-4f22-b10b-17a81a3cf0bd)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -259,7 +260,7 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
 
     a) Write the Application Health Check Shell Script
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/75881e66-25d1-4834-b5aa-04fb640d05a1)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/75881e66-25d1-4834-b5aa-04fb640d05a1)
 
     b) Set the crontab function inside the server using below command
      $ crontab -e 
@@ -270,7 +271,7 @@ c.	Configure Nginx as a reverse proxy to forward requests to the Gunicorn server
 
     C) Check the application log the status every 5 minutes using crontab
 
-    ![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/181769ab-ed4b-470b-acdc-7e57fb742257)
+![image](https://github.com/NageshPatil321/flaskproject/assets/63147214/181769ab-ed4b-470b-acdc-7e57fb742257)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
